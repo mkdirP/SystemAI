@@ -1,6 +1,6 @@
 :- discontiguous
     place/2,male/1,female/1,friend/2,enemy/2,spouse/2,
-    teacher/2, subordinate/2, is_friend/2, which_subordinate_enemies/2,sister/2,all_friends/2,all_person/2,is_classmate/2,sub_friends/2,fri_friends/2.
+    teacher/2, subordinate/2, which_subordinate_enemies/2,sister/2,all_friends/2,all_person/2,is_classmate/2,sub_friends/2.
 
 female("Sun Shangxiang").
 male("Liu Bei").
@@ -41,44 +41,42 @@ enemy("Cao Cao", "Liu Bei").
 enemy("Sun Ce", "Liu Bei").
 enemy("Cao Cao", "Sun Ce").
 friend("Guan Yu", "Liu Bei").
+friend("Guan Yu", "Zhang Fei").
 friend("Zhang Fei", "Liu Bei").
 
 
-
+/* Три партии являются врагами друг друга.*/
 enemy(A, B):-
     enemy(B, A).
 
+/* Дружить друг с другом */
 friend(A, B):- 
     friend(B, A).
 
-# Два человека дружат с одним и тем же человеком, поэтому они оба тоже друзья
-is_friend(A, B) :- 
-    friend(A, C),
-    friend(B, C),
-    A \= B.
-
+/* Двое, находящиеся под командованием одного человека, также являются друзьями.*/
 sub_friends(A,B):-
     subordinate(A, C), subordinate(B, C), A \= B.
-fri_friends(A,B):-
-    friend(A, C), friend(B, C), A \= B.
+/* Поиск всех своих друзей.*/
 all_friends(A, B):-
-    sub_friends(A, B); fri_friends(A, B); A \= B.
+    sub_friends(A, B); friend(A, B), A \= B.
 
+/* Если два человека в одной команде и оба - девушки, то они - сестры.*/
 sister(A, B):-
     place(A, C),
     place(B, C),
     female(A),
     female(B),
     A \= B.
-
+/* subordinate врага - это и враги вождя.*/
 which_subordinate_enemies(A, B):-
     enemy(A, C),
     subordinate(B, C),
     A \= B.
-
+/* Все лица, принадлежащие к лидеру, находящиеся в одном лагере */
 all_person(A, B):-
     spouse(B, A); subordinate(B, A); friend(B, A).
 
+/* Определить, находятся ли два человека в одном классе, и если да, то вывести, кто является преподавателем*/
 is_classmate(A, B):-
     teacher(C, A),
     teacher(C, B),
