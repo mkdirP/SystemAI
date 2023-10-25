@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.lab2.com/"
+     xml:base="http://www.lab2.com/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:www="http://www.lab1.com#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.lab2.com"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lab1.com#isEnemy -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isEnemy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.lab1.com#male"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lab1.com#isFriend -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isFriend">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.lab1.com#male"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lab1.com#isHead -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isHead">
+        <owl:inverseOf rdf:resource="http://www.lab1.com#isSubordinate"/>
+        <rdfs:domain rdf:resource="http://www.lab1.com#male"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lab1.com#isSister -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isSister">
+        <rdfs:domain rdf:resource="http://www.lab1.com#female"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#female"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lab1.com#isSpouse -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isSpouse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.lab1.com#female"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lab1.com#isStudent -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isStudent">
+        <owl:inverseOf rdf:resource="http://www.lab1.com#isTeacher"/>
+        <rdfs:domain rdf:resource="http://www.lab1.com#male"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lab1.com#isSubordinate -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isSubordinate">
+        <rdfs:domain rdf:resource="http://www.lab1.com#male"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lab1.com#isTeacher -->
+
+    <owl:ObjectProperty rdf:about="http://www.lab1.com#isTeacher">
+        <rdfs:domain rdf:resource="http://www.lab1.com#male"/>
+        <rdfs:range rdf:resource="http://www.lab1.com#male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lab1.com#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lab1.com#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.lab1.com#residence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lab1.com#residence">
+        <rdfs:domain rdf:resource="http://www.lab1.com#female"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lab1.com#female -->
+
+    <owl:Class rdf:about="http://www.lab1.com#female">
+        <rdfs:subClassOf rdf:resource="http://www.lab1.com#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lab1.com#male -->
+
+    <owl:Class rdf:about="http://www.lab1.com#male">
+        <rdfs:subClassOf rdf:resource="http://www.lab1.com#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lab1.com#person -->
+
+    <owl:Class rdf:about="http://www.lab1.com#person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lab1.com#CaoCao -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#CaoCao">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isEnemy rdf:resource="http://www.lab1.com#LiuBei"/>
+        <www:name>CaoCao</www:name>
+        <www:residence>WeiGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#DaQiao -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#DaQiao">
+        <rdf:type rdf:resource="http://www.lab1.com#female"/>
+        <www:isSister rdf:resource="http://www.lab1.com#XiaoQiao"/>
+        <www:isSpouse rdf:resource="http://www.lab1.com#SunCe"/>
+        <www:name>DaQiao</www:name>
+        <www:residence>WuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#DianWei -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#DianWei">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isSubordinate rdf:resource="http://www.lab1.com#CaoCao"/>
+        <www:name>DianWei</www:name>
+        <www:residence>WeiGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#GuanYu -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#GuanYu">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isFriend rdf:resource="http://www.lab1.com#LiuBei"/>
+        <www:name>GuanYu</www:name>
+        <www:residence>ShuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#LaoFuZi -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#LaoFuZi">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isTeacher rdf:resource="http://www.lab1.com#ZhouYu"/>
+        <www:isTeacher rdf:resource="http://www.lab1.com#ZhuGeLiang"/>
+        <www:name>LaoFuZi</www:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#LiuBei -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#LiuBei">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:name>LiuBei</www:name>
+        <www:residence>ShuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#SiMaYi -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#SiMaYi">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isStudent rdf:resource="http://www.lab1.com#ZhuangZhou"/>
+        <www:isSubordinate rdf:resource="http://www.lab1.com#CaoCao"/>
+        <www:name>SiMaYi</www:name>
+        <www:residence>WeiGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#SunCe -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#SunCe">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isEnemy rdf:resource="http://www.lab1.com#LiuBei"/>
+        <www:name>SunCe</www:name>
+        <www:residence>WuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#SunShangXiang -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#SunShangXiang">
+        <rdf:type rdf:resource="http://www.lab1.com#female"/>
+        <www:isSpouse rdf:resource="http://www.lab1.com#LiuBei"/>
+        <www:name>SunShangXiang</www:name>
+        <www:residence>ShuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#XiaHouDun -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#XiaHouDun">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isSubordinate rdf:resource="http://www.lab1.com#CaoCao"/>
+        <www:name>XiaHouDun</www:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#XiaoQiao -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#XiaoQiao">
+        <rdf:type rdf:resource="http://www.lab1.com#female"/>
+        <www:isSister rdf:resource="http://www.lab1.com#DaQiao"/>
+        <www:isSpouse rdf:resource="http://www.lab1.com#ZhouYu"/>
+        <www:name>XiaoQiao</www:name>
+        <www:residence>WuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#ZhangFei -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#ZhangFei">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isFriend rdf:resource="http://www.lab1.com#LiuBei"/>
+        <www:name>ZhangFei</www:name>
+        <www:residence>ShuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#ZhaoYun -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#ZhaoYun">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isSubordinate rdf:resource="http://www.lab1.com#LiuBei"/>
+        <www:name>ZhaoYun</www:name>
+        <www:residence>ShuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#ZhouYu -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#ZhouYu">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isStudent rdf:resource="http://www.lab1.com#LaoFuZi"/>
+        <www:isSubordinate rdf:resource="http://www.lab1.com#SunCe"/>
+        <www:name>ZhouYu</www:name>
+        <www:residence>WuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#ZhuGeLiang -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#ZhuGeLiang">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isStudent rdf:resource="http://www.lab1.com#LaoFuZi"/>
+        <www:isSubordinate rdf:resource="http://www.lab1.com#LiuBei"/>
+        <www:name>ZhuGeLiang</www:name>
+        <www:residence>ShuGuo</www:residence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.lab1.com#ZhuangZhou -->
+
+    <owl:NamedIndividual rdf:about="http://www.lab1.com#ZhuangZhou">
+        <rdf:type rdf:resource="http://www.lab1.com#male"/>
+        <www:isTeacher rdf:resource="http://www.lab1.com#SiMaYi"/>
+        <www:name>ZhuangZhou</www:name>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
